@@ -1,5 +1,5 @@
 let currentPin = "";
-const targetPin = "2020";
+const targetPin = "9699";
 
 function appendPin(num) {
     if (currentPin.length < 4) {
