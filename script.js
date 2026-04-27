@@ -144,11 +144,11 @@ function logout() {
     // Reset PIN state
     currentPin = "";
     updateDots();
-    
+
     // Switch screens
     const birthdayScreen = document.getElementById('birthday-screen');
     const lockScreen = document.getElementById('lock-screen');
-    
+
     birthdayScreen.classList.remove('active');
     setTimeout(() => {
         // Reset sub-sections visibility
@@ -156,12 +156,12 @@ function logout() {
         document.querySelector('.happy-birthday').style.display = 'block';
         document.getElementById('surprise-section').style.display = 'none';
         document.getElementById('gifts-container').style.display = 'none';
-        
+
         // Reset gifts (close all boxes)
         document.querySelectorAll('.gift-box').forEach(box => {
             box.classList.remove('open');
         });
-        
+
         // Show lock screen
         lockScreen.classList.add('active');
     }, 600);
