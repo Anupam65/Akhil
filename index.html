@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wish | Unlock the Magic</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Pacifico&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="lock-screen" class="screen active">
+        <div class="background-decor">
+            <div class="shape circle-1"></div>
+            <div class="shape circle-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="photo-section">
+                <div class="polaroid-frame">
+                    <div class="photo-wrapper">
+                        <img src="photo.png" alt="Happy Moment" id="main-photo">
+                    </div>
+                    <div class="bow-decor"></div>
+                </div>
+                <div class="teddy-decor">
+                    <img src="teddy.png" alt="Teddy Bear">
+                </div>
+            </div>
+
+            <div class="keypad-section">
+                <h2 class="prompt-text">Entre a passcode</h2>
+                <div class="pin-display">
+                    <div class="pin-dot" id="dot-0"></div>
+                    <div class="pin-dot" id="dot-1"></div>
+                    <div class="pin-dot" id="dot-2"></div>
+                    <div class="pin-dot" id="dot-3"></div>
+                </div>
+
+                <div class="keypad">
+                    <button class="key" onclick="appendPin('1')">1</button>
+                    <button class="key" onclick="appendPin('2')">2</button>
+                    <button class="key" onclick="appendPin('3')">3</button>
+                    <button class="key" onclick="appendPin('4')">4</button>
+                    <button class="key" onclick="appendPin('5')">5</button>
+                    <button class="key" onclick="appendPin('6')">6</button>
+                    <button class="key" onclick="appendPin('7')">7</button>
+                    <button class="key" onclick="appendPin('8')">8</button>
+                    <button class="key" onclick="appendPin('9')">9</button>
+                    <button class="key special">*</button>
+                    <button class="key" onclick="appendPin('0')">0</button>
+                    <button class="key special" onclick="clearPin()">#</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="birthday-screen" class="screen">
+        <div class="confetti-container" id="confetti"></div>
+        <div class="celebration-content">
+            <h1 class="happy-birthday">Happy Birthday!</h1>
+
+            <div id="main-celebration">
+                <div class="cake-display">
+                    <img src="cake.png" alt="Birthday Cake">
+                </div>
+                <button class="next-btn" onclick="showSurpriseQuestion()">Next</button>
+            </div>
+
+            <div id="surprise-section" style="display: none;">
+                <h2 class="surprise-text">Are you ready for a surprise?</h2>
+                <div class="choice-buttons">
+                    <button class="choice-btn yes-btn" id="yes-btn" onclick="revealGifts()">Yes</button>
+                    <button class="choice-btn no-btn" id="no-btn" onclick="handleNoClick()">No</button>
+                </div>
+            </div>
+
+            <div id="no-response" style="display: none;">
+                <div class="angry-bear-container">
+                    <img src="angry.gif" alt="Angry Bear">
+                </div>
+                <button class="choice-btn retry-btn" onclick="tryAgain()">Try Again</button>
+            </div>
+
+            <div id="gifts-container" style="display: none;">
+                <h2 class="surprise-text">Pick a gift to open! 🎁</h2>
+                <div class="gift-grid">
+                    <div class="gift-box" onclick="openGift(this)">
+                        <div class="lid"></div>
+                        <div class="box-body"></div>
+                        <div class="gift-content photo-gift">
+                            <img src="55085.jpg" alt="Gift 1">
+                        </div>
+                    </div>
+                    <div class="gift-box" onclick="openGift(this)">
+                        <div class="lid"></div>
+                        <div class="box-body"></div>
+                        <div class="gift-content photo-gift">
+                            <img src="55115.jpg" alt="Gift 2">
+                        </div>
+                    </div>
+                    <div class="gift-box" onclick="openGift(this)">
+                        <div class="lid"></div>
+                        <div class="box-body"></div>
+                        <div class="gift-content photo-gift">
+                            <img src="55153.jpg" alt="Gift 3">
+                        </div>
+                    </div>
+                </div>
+                <div class="logout-section">
+                    <button class="choice-btn logout-btn" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
